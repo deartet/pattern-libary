@@ -147,6 +147,11 @@
         "slug": "Buttons",
         "children": [
             {
+                "path": "patterns/1.elements/Buttons/buttons-bootstrap.md",
+                "name": "Bootstrap button",
+                "slug": "buttons-bootstrap.md"
+            },
+            {
                 "path": "patterns/1.elements/Buttons/buttons-dark.md",
                 "name": "Buttons dark",
                 "slug": "buttons-dark.md"

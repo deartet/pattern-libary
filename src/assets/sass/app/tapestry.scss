@@ -77,16 +77,20 @@ html[ng-app]{
     .form-control{
         position: relative;
         @include rem(margin-bottom, 0.75);
+        background-color: transparent;
+        padding: 0;
+        border: none;
 
         .text-input{
             padding-right: 35px;
             margin-bottom: 0;
+            padding: 0.8em 1em; //add because of default bootstrap
         }
 
         .fa{
             position: absolute;
             right: 10px;
-            top: 50%;
+            top: 60%; //adjust from 50% because of default bootstrap
             margin: 0;
             margin-top: -8px;
             height: 15px;
@@ -692,8 +696,6 @@ $menu-spacing: 20px;
         border-radius: 0 0 5px 5px;
         padding: 1em;
         font-size: 16px;
-        max-height: 400px;
-        overflow: auto;
         white-space: wrap !important;
         border-top: 1px $border solid;
     }
@@ -830,21 +832,11 @@ $menu-spacing: 20px;
     padding: 15px;
 }
 
-
-
 /**
- * Comments
+ * overwrite default tapestry which affected by bootstrap 3.3
  */
-
-.pattern-comments{
-    padding: 15px;
-
-    > a{
-        cursor: pointer;
-        &:before{
-            font-family: "FontAwesome";
-            content: "\f075";
-            margin-right: 5px;
-        }
-    }
+.tapestry-header {
+    .btn:focus, .btn:active:focus {
+    outline: none;
+}
 }

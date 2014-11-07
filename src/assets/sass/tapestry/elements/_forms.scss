@@ -85,6 +85,7 @@ textarea{
 .form-control{
     position: relative;
     @include rem(margin-bottom, 0.75);
+   
 
     .text-input{
         padding-right: 35px;

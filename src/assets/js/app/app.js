@@ -5,8 +5,7 @@
  */
 
 var version = '1.0.0',
-    lastUpdated = '26 Feb 2014',
-    disqus_shortname = 'tapestryapp';
+    lastUpdated = '26 Feb 2014';
 
 
 /* jsonPath of the files will be inserted by gulp-script-inject after reading /src/json folder */
@@ -22,6 +21,7 @@ angular.module('tapestry', [
     'tapestry.filters', 
     'ngRoute',
     'once'
+
     ])
 
     .value('version', version)
@@ -29,15 +29,14 @@ angular.module('tapestry', [
     .value('lastUpdated', lastUpdated)
     
     .value('isMobile', /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test( (navigator.userAgent||navigator.vendor||window.opera))) 
-    
-    .value('disqus_shortname', disqus_shortname)
+   
     /**
      * Router provider
      * @param  {[type]} $routeProvider [description]     
      */
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         
-        $locationProvider.hashPrefix('!');
+        //$locationProvider.hashPrefix('!');
 
         /* Homepage */
 
@@ -219,12 +218,8 @@ angular.module('tapestry', [
                     lookup: data,
 
                     onSelect: function(value){
-                        
-                        var location = window.location.href,
-                            hashPrefix = '#!',
-                            path = location.split(hashPrefix)[0]
-                        
-                        window.location.href = path + hashPrefix + value.url;
+                        //console.log(value)
+                        window.location.hash = value.url
 
                     },
 
